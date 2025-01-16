@@ -1,0 +1,12 @@
+pandoc: 2.9.2.1
+pkgdown: 2.1.1
+pkgdown_sha: ~
+articles:
+  day_1: day_1.html
+  day_2: day_2.html
+  day_3: day_3.html
+  z_appendix: z_appendix.html
+last_built: 2025-01-16T16:50Z
+urls:
+  reference: https://lshep.github.io/RPG520/reference
+  article: https://lshep.github.io/RPG520/articles
