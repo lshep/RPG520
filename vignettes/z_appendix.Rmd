@@ -470,6 +470,7 @@ devtools, usethis, and roxygen2', and got a pretty good starting point
   `use_vignette()` to add a vigentte, `use_mit_license()` (for
   instance) to add a license that indicates how you allow your package
   to be used by others, etc.
+- [biocthis][] extends usethis with more Bioconductor compatibility.
 - [roxygen2][] for documenting functions in your package.
 
 Package vignettes (e.g., `vignette(package="roxygen2")`) and Google
@@ -477,5 +478,6 @@ are great resources during package development.
 
 [devtools]: https://CRAN.R-project.org/package=devtools
 [usethis]: https://CRAN.R-project.org/package=usethis
+[biocthis]: https://bioconductor.org/packages/biocthis
 [roxygen2]: https://CRAN.R-project.org/package=roxygen2
 

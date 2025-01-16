@@ -3,12 +3,17 @@ Title: Course Material for Principles of Computational Oncology R / Bioconductor
 Version: 1.0.0
 Authors@R: c(
     person(
-        "Martin", "Morgan", role = c("aut", "cre"),
+        "Martin", "Morgan", role = c("aut"),
+        email = "mtmorgan.xyz@gmail.com",
+        comment = c(ORCID = "0000-0002-5874-8148")
+    ),
+        person(
+        "Lori", "Kern", role = c("aut", "cre"),
         email = "mtmorgan.xyz@gmail.com",
         comment = c(ORCID = "0000-0002-5874-8148")
     ))
 Description: Course material for a workshop offered as part of Roswell
-    Park Comprehensive Cancer Center 2024 graduate course "Principles
+    Park Comprehensive Cancer Center 2025 graduate course "Principles
     of Computational Oncology".
 License: Artistic-2.0
 Encoding: UTF-8
@@ -21,5 +26,5 @@ Suggests:
     RColorBrewer,
     knitr, rmarkdown
 VignetteBuilder: knitr
-BugReports: https://github.com/mtmorgan/RPG520/issues
-URL: https://mtmorgan.github.io/RPG520/
+BugReports: https://github.com/lshep/RPG520/issues
+URL: https://lshep.github.io/RPG520/

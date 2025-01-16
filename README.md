@@ -5,8 +5,10 @@
 <!-- badges: end -->
 
 This repository provides course material for a workshop offered as
-part of Roswell Park Comprehensive Cancer Center 2024 graduate course
+part of Roswell Park Comprehensive Cancer Center 2025 graduate course
 "Principles of Computational Oncology".
+
+The [original content](https://mtmorgan.github.io/RPG520/) was created by Martin Morgan. 
 
 ## Installation
 
@@ -15,7 +17,7 @@ install this package using the following commands.
 
 ``` r
 ## install.packages("devtools")
-devtools::install_github("mtmorgan/RPG520")
+devtools::install_github("lshep/RPG520")
 ```
 
 ## Content
