@@ -36,6 +36,7 @@
 <li><a class="dropdown-item" href="../articles/day_1.html">Day 1: Introduction to the CCR, and to R</a></li>
     <li><a class="dropdown-item" href="../articles/day_2.html">Day 2: Data Management, Visualization, and Analysis</a></li>
     <li><a class="dropdown-item" href="../articles/day_3.html">Day 3: Single Cell Data; Survival Analysis</a></li>
+    <li><a class="dropdown-item" href="../articles/day_4.html">Introduction to Bioconductor Classes</a></li>
     <li><a class="dropdown-item" href="../articles/z_appendix.html">Appendix</a></li>
   </ul>
 </li>
@@ -101,7 +102,7 @@
 <span><span class="op">)</span></span></code></pre></div>
 <p>Use <code><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff()</a></code> (remove from the vector in the first argument all elements that occur in the vector in the second argument) so that only packages that are not currently installed remain.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, use the function <code><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages()</a></code> to install the required packages from a central CRAN repository.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="va">pkgs</span>, repos <span class="op">=</span> <span class="st">"https://CRAN.R-project.org"</span><span class="op">)</span></span></code></pre></div>
@@ -112,7 +113,7 @@
 <p><a href="https://bioconductor.org/packages" class="external-link">Bioconductor</a> packages require a slightly different installation procedure. Make sure that you have the <a href="https://CRAN.R-project.org/package=BiocManager" class="external-link">BiocManager</a> package installed from CRAN</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="st">"BiocManager"</span></span>
-<span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="va">pkgs</span>, repos <span class="op">=</span> <span class="st">"https://CRAN.R-project.org"</span><span class="op">)</span></span></code></pre></div>
 <p>Then install <a href="https://bioconductor.org/packages" class="external-link">Bioconductor</a> (and CRAN) packages as needed</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
@@ -120,7 +121,7 @@
 <span>    <span class="st">"cellxgenedp"</span>, <span class="co"># Bioconductor package</span></span>
 <span>    <span class="st">"Seurat"</span>       <span class="co"># CRAN package</span></span>
 <span><span class="op">)</span></span>
-<span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">pkgs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/setops.html" class="external-link">setdiff</a></span><span class="op">(</span><span class="va">pkgs</span>, <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/row_colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu">BiocManager</span><span class="fu">::</span><span class="fu"><a href="https://bioconductor.github.io/BiocManager/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="va">pkgs</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -193,7 +194,7 @@
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">tbl</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">week</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>n_mice <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>, av_wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">tumor_weight</span><span class="op">)</span><span class="op">)</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarize</a></span><span class="op">(</span>n_mice <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html" class="external-link">n</a></span><span class="op">(</span><span class="op">)</span>, av_wt <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/BiocGenerics/man/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">tumor_weight</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">## <span style="color: #949494;"># A tibble: 3 × 3</span></span></span>
 <span><span class="co">##    week n_mice av_wt</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
@@ -360,7 +361,7 @@
 <span><span class="co">##     cat("\n")</span></span>
 <span><span class="co">##     invisible(x)</span></span>
 <span><span class="co">## }</span></span>
-<span><span class="co">## &lt;bytecode: 0x5cef2d834ba0&gt;</span></span>
+<span><span class="co">## &lt;bytecode: 0x62d86bffada8&gt;</span></span>
 <span><span class="co">## &lt;environment: namespace:stats&gt;</span></span></code></pre></div>
 <p>This is the function that is used to print the result returned by <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test()</a></code>. I scanned the code looking for ‘p-value’, and spotted the lines</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(x<span class="op">$</span>p.value)) {</span>
