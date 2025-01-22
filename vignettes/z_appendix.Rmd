@@ -147,7 +147,9 @@ install Windows or macOS packages from source.
 [Bioconductor]: https://bioconductor.org/packages
 [renv]: https://rstudio.github.io/renv/index.html
 
-# Data used in this workshop
+# Data
+
+## Used in this workshop
 
 Datasets used in this workshop are available on the CCR. They can also
 be accessed on the internet. The URL for each dataset is the
@@ -171,6 +173,64 @@ Or downloaded to disk for easy re-use
 ```{r, eval = FALSE}
 download.file(ALL_url, "ALL.csv")
 ```
+
+## Finding New Data
+
+### Website, Databases, Github repos
+
+There are lots of places to download and find data from the internet. Make sure
+to read any licensing to ensure correct usage.
+
+### In Bioconductor
+
+#### Packages
+
+Bioconductor consists of four types of packages: Software, Experiment Data,
+Annotation Data, and Workflows.
+
+[Software Packages][] typically provide functions for data analysis. The package
+itself could include small datasets. Data included in the data directory will be documented
+and available via `data` function in R. Data included in the
+`inst/extdata` will be available by using `system.file` and using appropriate
+load or read functions in R for the file type. Software packages themselves may
+also be direct interfaces with web based clients. See some examples of [web
+clients][] in Bioconductor.
+
+[Experiment Data Packages][] packages contain curated data from an
+experiment, teaching course or publication and in most cases contain a single
+data set, or provide an interface to interact and download from an internet
+resource.
+
+[Annotation Packages][] are database-like packages that provide
+information linking identifies (e.g., Entrez gene names or Affymetrix probe ids)
+to other information (e.g., chromosomal location, Gene Ontology category).
+
+The last type of package, [Workflows][], generally do not contain R code but may
+contain data or links to data. They consist of in depth or end-to-end analysis
+of a type of data. 
+
+[Software Packages]: https://bioconductor.org/packages/release/BiocViews.html#___Software
+[web clients]: https://bioconductor.org/packages/release/BiocViews.html#___ThirdPartyClient
+[Experiment Data Packages]: https://bioconductor.org/packages/release/BiocViews.html#___ExperimentData
+[Annotation Packages]: https://bioconductor.org/packages/release/BiocViews.html#___AnnotationData
+[Workflows]: https://bioconductor.org/packages/release/BiocViews.html#___Workflow
+
+#### Hubs
+
+Bioconductor has a concepts of Hubs, namely: [ExperimentHub][] and
+[AnnotationHub][]. The Hub itself is a database with pointers to download a
+resource. Hub resources can be community contributed or provided by the
+Bioconductor Core Team. 
+
+```{r, message = FALSE}
+library(ExperimentHub)
+eh = ExperimentHub()
+eh
+```
+
+[ExperimentHub]: https://www.bioconductor.org/packages/ExperimentHub/
+[AnnotationHub]: https://www.bioconductor.org/packages/AnnotationHub/
+
 
 # Questions arising
 

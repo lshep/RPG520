@@ -31,7 +31,7 @@ management, visualization, and statistical analysis.
 [Day 3][] illustrates additional cases studies with a computational
 oncology emphasis.
 
-[Day 4](../inst/slides/day_4.html) introduction to Bioconductor classes
+[Day 4][] introduction to Bioconductor classes
 
 The [appendix][] provides instructions on installing *R* and
 *RStudio*, managing packages, and retrieving data sets used in
