@@ -55,18 +55,29 @@ will run the file in a new *R* session using the command
 `source('your_name.R', echo = TRUE)`. This will read and evaluate each
 *R* command in the file.
 
-Grading will be out of 10, with the following thresholds
 
-- 7 / 10 if `source('your_name.R', echo = TRUE)` works without error.
-- 8 / 10 for scripts that implement more extensive analyses, or that
-  present interesting or complicated data.
-- up to 10 / 10 for work that goes beyond the material we cover this
-  week, e.g., using 'Rmarkdown' to present your work, performing
-  additional (and appropriate) data manipulation steps using dplyr or
-  other packages, additional visualizations or statstical analyses.
+Grading will be out of 40, with the following thresholds:
 
-Note that the 7 / 10 score could be obtained by copying & pasting (a
-subset of) the commands from Wednesday's lab into
-'your_name.R'. Please feel free to contact or speak with me if you
-have problems.
+- 0-5/40 Submit a 'your_name.R' script that includes some code.
+- 5-10/40 If source('your_name.R', echo = TRUE) works without error.
+- 10-20/40 If you script has a data load/read, manipulation/analysis, and
+  plotting. Include comments before code chunks to explain what is being perform
+  (and why).
+- 20-25/40 For scripts that implement more extensive analyses, or that present interesting or complicated data.
+- 25-30/40 For scripts that Extend out to include additional (and appropriate)
+  data mannipulations, steps using dplyr or other packages, additional visualizations or statstical analyses.
+- 30-40/40 If you use 'Rmarkdown' instead of .R script. The text documentation
+  should describe the code performed and why. Code should still be executed and
+  run without error.
+  
 
+In all cases please included a commented section of your `sessionInfo`. Note: if
+this is executed as a code chunk it will use whatever the sessionInfo is when
+run at compile time. Hence, include your sessionInfo you used when
+running/testing the script as a commented region and an executable code chunk. 2
+point deduction that does not include a sessionInfo.
+
+Note that a 10-20 could be obtained by copying & pasting (a subset of) the
+commands from Wednesday's lab into 'your_name.R'.
+
+Please feel free to contact or speak with me if you have problems. 
