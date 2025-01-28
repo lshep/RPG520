@@ -418,7 +418,7 @@
 <span><span class="co">##     cat("\n")</span></span>
 <span><span class="co">##     invisible(x)</span></span>
 <span><span class="co">## }</span></span>
-<span><span class="co">## &lt;bytecode: 0x5ea1923397d0&gt;</span></span>
+<span><span class="co">## &lt;bytecode: 0x6364b0c03c90&gt;</span></span>
 <span><span class="co">## &lt;environment: namespace:stats&gt;</span></span></code></pre></div>
 <p>This is the function that is used to print the result returned by <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test()</a></code>. I scanned the code looking for ‘p-value’, and spotted the lines</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(x<span class="op">$</span>p.value)) {</span>
