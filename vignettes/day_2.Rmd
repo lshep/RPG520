@@ -95,7 +95,7 @@ brfss_file_path <- system.file(package = "RPG520", "extdata", "BRFSS-subset.csv"
 ```
 
 ```{r, eval = FALSE}
-brfss_file_path <- file.choose() # look for 'Rpg520/week-04/extdata/BRFSS-subset.csv'
+brfss_file_path <- file.choose() # look for 'Rpg520/lkern/extdata/BRFSS-subset.csv'
 ```
 
 Take a peak at the data using the `readLines()` function to read the

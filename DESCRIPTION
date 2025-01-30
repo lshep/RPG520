@@ -9,9 +9,8 @@ Authors@R: c(
     ),
         person(
         "Lori", "Kern", role = c("aut", "cre"),
-        email = "mtmorgan.xyz@gmail.com",
-        comment = c(ORCID = "0000-0002-5874-8148")
-    ))
+        email = "lori.shepherd@roswellpark.org")
+    )
 Description: Course material for a workshop offered as part of Roswell
     Park Comprehensive Cancer Center 2025 graduate course "Principles
     of Computational Oncology".

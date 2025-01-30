@@ -158,7 +158,7 @@ ALL dataset is available at
 
 ```{r}
 base_url <-
-    "https://raw.githubusercontent.com/mtmorgan/RPG520/main/inst/extdata/"
+    "https://raw.githubusercontent.com/lshep/RPG520/main/inst/extdata/"
 ALL_url <- paste0(base_url, "ALL.csv")
 ```
 
@@ -173,6 +173,17 @@ Or downloaded to disk for easy re-use
 ```{r, eval = FALSE}
 download.file(ALL_url, "ALL.csv")
 ```
+
+If you have already installed the package on your system, the data included in
+the workshop will already be on your system as package data. Package's that
+include data in `inst/extadata` will have the data available in the installation
+path. You can return the path to the local file on your system using `system.file`:
+
+```{r, eval=FALSE}
+path <- system.file(package = "RPG520", "extdata", "ALL.csv")
+all <- readr::read_csv(path)
+```
+ 
 
 ## Finding New Data
 

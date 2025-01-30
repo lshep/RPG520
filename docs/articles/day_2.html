@@ -124,7 +124,7 @@
 </h3>
 <p>Use <code><a href="https://rdrr.io/r/base/file.choose.html" class="external-link">file.choose()</a></code> to find the ‘BRFSS-subset.csv’ file on the CCR file system.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">brfss_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.choose.html" class="external-link">file.choose</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># look for 'Rpg520/week-04/extdata/BRFSS-subset.csv'</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">brfss_file_path</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/file.choose.html" class="external-link">file.choose</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># look for 'Rpg520/lkern/extdata/BRFSS-subset.csv'</span></span></code></pre></div>
 <p>Take a peak at the data using the <code><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines()</a></code> function to read the first 3 lines of data, and <code>cat("\n")</code> to print the result to the terminal</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">brfss_file_path</span>, <span class="fl">3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
