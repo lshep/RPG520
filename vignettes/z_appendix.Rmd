@@ -149,6 +149,25 @@ install Windows or macOS packages from source.
 
 # Data
 
+## Read/Import
+
+- `data()` (for package provided data)
+- `load()` (for saved objects)
+- `loadhistory()` 
+- `read()` methods (ie. readLines, readRDS, read.csv...)
+- [Bioconductor specific](https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#commonimport)
+- User created/defined
+
+## Export/Write/Save
+
+- `write()`\`write.csv` lots of options to customize writting a table
+- `save()` saves objects
+- `save.image()` saves workspace
+- `savehistory()`
+- `png()`\`pdf()`...with `dev.off()` or `dev.print()`
+- `ggsave()`
+- User created/defined
+
 ## Used in this workshop
 
 Datasets used in this workshop are available on the CCR. They can also
@@ -183,7 +202,7 @@ path. You can return the path to the local file on your system using `system.fil
 path <- system.file(package = "RPG520", "extdata", "ALL.csv")
 all <- readr::read_csv(path)
 ```
- 
+
 
 ## Finding New Data
 
@@ -191,6 +210,19 @@ all <- readr::read_csv(path)
 
 There are lots of places to download and find data from the internet. Make sure
 to read any licensing to ensure correct usage.
+
+#### In Packages
+
+Packages can directly or indirectly provide data to users.
+
+- Data directly provided are in the source directory `data`. They must provide a
+  help page accessible with `?` and can be loaded by using the `data()` function. 
+
+- Indirect Data is provided in the source directory `inst` (typically)
+  `inst/extdata`. The path to the data can be accessed with
+  `system.file(package="nameOfPackage", "extdata", "nameOfFile")`. An
+  appropriate load or read function can then by used to load data into R
+  session.
 
 ### In Bioconductor
 
@@ -241,6 +273,10 @@ eh
 
 [ExperimentHub]: https://www.bioconductor.org/packages/ExperimentHub/
 [AnnotationHub]: https://www.bioconductor.org/packages/AnnotationHub/
+
+See previous
+[presentation](https://docs.google.com/presentation/d/10kG9G_mJLR4paNZ7JS-BFEKaZEFJxYFsznPuxtUnzug/edit#slide=id.p)
+for additional usage. 
 
 
 # Questions arising
@@ -515,11 +551,13 @@ results. This is a great tool for reproducible, communicable research.
 An easy way to start is to use the 'File -> New File -> R Markdown...'
 menu in *RStudio*. This generates a demonstration document that you
 can tweak and explore. Build it to HTML by pressing the 'knit...'
-button on the markdown document pane. A [cheat
-sheet][rmarkdown-cheatsheet] provides some further hints. Ask Google
-for additional questions.
+button on the markdown document pane.
 
-[rmarkdown-cheatsheet]: https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+Cheatsheets:
+
+- [rmarkdown-cheatsheet V1](https://rstudio.github.io/cheatsheets/html/rmarkdown.html)
+- [rmarkdown-cheatsheet V2](https://rmarkdown.rstudio.com/lesson-15.HTML)
+- [rmarkdown-cheatsheet V3](https://www.markdownguide.org/cheat-sheet/)
 
 ## Creating an *R* package
 

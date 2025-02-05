@@ -65,7 +65,7 @@ Grading will be out of 40, with the following thresholds:
   (and why).
 - 20-25/40 For scripts that implement more extensive analyses, or that present interesting or complicated data.
 - 25-30/40 For scripts that extend out to include additional (and appropriate)
-  data mannipulations, steps using dplyr or other packages, additional visualizations or statstical analyses.
+  data mannipulations, steps using dplyr or other packages, additional visualizations or statstical analyses. 
 - 30-40/40 If you use 'Rmarkdown' instead of .R script. The text documentation
   should describe the code performed and why. Code should still be executed and
   run without error.
@@ -79,4 +79,10 @@ point deduction that does not include a sessionInfo.
 Note that a 10-20 could be obtained by copying & pasting (a subset of) the
 commands from Wednesday's lab into 'your_name.R'.
 
-Please feel free to contact or speak with me if you have problems. 
+**Due: February 28**
+
+Please feel free to contact or speak with me if you have problems.
+
+Lori Kern
+lori.shepherd@roswellpark.org
+RSC-400

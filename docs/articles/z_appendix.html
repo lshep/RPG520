@@ -146,6 +146,38 @@
 <h2 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
 </h2>
 <div class="section level3">
+<h3 id="readimport">Read/Import<a class="anchor" aria-label="anchor" href="#readimport"></a>
+</h3>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data()</a></code> (for package provided data)</li>
+<li>
+<code><a href="https://rdrr.io/r/base/load.html" class="external-link">load()</a></code> (for saved objects)</li>
+<li><code><a href="https://rdrr.io/r/utils/savehistory.html" class="external-link">loadhistory()</a></code></li>
+<li>
+<code>read()</code> methods (ie. readLines, readRDS, read.csv…)</li>
+<li><a href="https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#commonimport" class="external-link">Bioconductor specific</a></li>
+<li>User created/defined</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="exportwritesave">Export/Write/Save<a class="anchor" aria-label="anchor" href="#exportwritesave"></a>
+</h3>
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/write.html" class="external-link">write()</a></code>`write.csv` lots of options to customize writting a table</li>
+<li>
+<code><a href="https://rdrr.io/r/base/save.html" class="external-link">save()</a></code> saves objects</li>
+<li>
+<code><a href="https://rdrr.io/r/base/save.html" class="external-link">save.image()</a></code> saves workspace</li>
+<li><code><a href="https://rdrr.io/r/utils/savehistory.html" class="external-link">savehistory()</a></code></li>
+<li>
+<code><a href="https://rdrr.io/r/grDevices/png.html" class="external-link">png()</a></code>`pdf()<code>...with</code>dev.off()<code>or</code>dev.print()`</li>
+<li><code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="external-link">ggsave()</a></code></li>
+<li>User created/defined</li>
+</ul>
+</div>
+<div class="section level3">
 <h3 id="used-in-this-workshop">Used in this workshop<a class="anchor" aria-label="anchor" href="#used-in-this-workshop"></a>
 </h3>
 <p>Datasets used in this workshop are available on the CCR. They can also be accessed on the internet. The URL for each dataset is the <code>base_url</code> pasted before the file name used in this document. Thus the ALL dataset is available at</p>
@@ -171,6 +203,15 @@
 <h4 id="website-databases-github-repos">Website, Databases, Github repos<a class="anchor" aria-label="anchor" href="#website-databases-github-repos"></a>
 </h4>
 <p>There are lots of places to download and find data from the internet. Make sure to read any licensing to ensure correct usage.</p>
+<div class="section level5">
+<h5 id="in-packages">In Packages<a class="anchor" aria-label="anchor" href="#in-packages"></a>
+</h5>
+<p>Packages can directly or indirectly provide data to users.</p>
+<ul>
+<li><p>Data directly provided are in the source directory <code>data</code>. They must provide a help page accessible with <code>?</code> and can be loaded by using the <code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data()</a></code> function.</p></li>
+<li><p>Indirect Data is provided in the source directory <code>inst</code> (typically) <code>inst/extdata</code>. The path to the data can be accessed with <code>system.file(package="nameOfPackage", "extdata", "nameOfFile")</code>. An appropriate load or read function can then by used to load data into R session.</p></li>
+</ul>
+</div>
 </div>
 <div class="section level4">
 <h4 id="in-bioconductor">In Bioconductor<a class="anchor" aria-label="anchor" href="#in-bioconductor"></a>
@@ -214,6 +255,7 @@
 <span><span class="co">##   EH9620 | TF Binding Info mm10 by sample (ChIP-Atlas)                        </span></span>
 <span><span class="co">##   EH9621 | TF Binding Info mm10 by tissue (ChIP-Atlas)                        </span></span>
 <span><span class="co">##   EH9622 | TF Binding Info mm10 by sample (ENCODE)</span></span></code></pre></div>
+<p>See previous <a href="https://docs.google.com/presentation/d/10kG9G_mJLR4paNZ7JS-BFEKaZEFJxYFsznPuxtUnzug/edit#slide=id.p" class="external-link">presentation</a> for additional usage.</p>
 </div>
 </div>
 </div>
@@ -422,7 +464,7 @@
 <span><span class="co">##     cat("\n")</span></span>
 <span><span class="co">##     invisible(x)</span></span>
 <span><span class="co">## }</span></span>
-<span><span class="co">## &lt;bytecode: 0x64dc03548930&gt;</span></span>
+<span><span class="co">## &lt;bytecode: 0x5a4855da2cb8&gt;</span></span>
 <span><span class="co">## &lt;environment: namespace:stats&gt;</span></span></code></pre></div>
 <p>This is the function that is used to print the result returned by <code><a href="https://rdrr.io/r/stats/t.test.html" class="external-link">t.test()</a></code>. I scanned the code looking for ‘p-value’, and spotted the lines</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true"></a>    <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(x<span class="op">$</span>p.value)) {</span>
@@ -477,7 +519,13 @@
 <em>R</em>-flavored markdown<a class="anchor" aria-label="anchor" href="#r-flavored-markdown"></a>
 </h3>
 <p>Markdown is a great plain-text format for writing documents and reports. <em>R</em>-flavored markdown allows <em>R</em> code ‘chunks’ to be embedded in the markdown document. The document can then be processed to, e.g., plain markdown or html or slides to share with others. During processing the <em>R</em> code chunks are evaluated. This means that you can can describe what and why you’re doing something, then show what you actually did, and present figures or tables summarizing your results. This is a great tool for reproducible, communicable research.</p>
-<p>An easy way to start is to use the ‘File -&gt; New File -&gt; R Markdown…’ menu in <em>RStudio</em>. This generates a demonstration document that you can tweak and explore. Build it to HTML by pressing the ‘knit…’ button on the markdown document pane. A <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" class="external-link">cheat sheet</a> provides some further hints. Ask Google for additional questions.</p>
+<p>An easy way to start is to use the ‘File -&gt; New File -&gt; R Markdown…’ menu in <em>RStudio</em>. This generates a demonstration document that you can tweak and explore. Build it to HTML by pressing the ‘knit…’ button on the markdown document pane.</p>
+<p>Cheatsheets:</p>
+<ul>
+<li><a href="https://rstudio.github.io/cheatsheets/html/rmarkdown.html" class="external-link">rmarkdown-cheatsheet V1</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-15.HTML" class="external-link">rmarkdown-cheatsheet V2</a></li>
+<li><a href="https://www.markdownguide.org/cheat-sheet/" class="external-link">rmarkdown-cheatsheet V3</a></li>
+</ul>
 </div>
 <div class="section level3">
 <h3 id="creating-an-r-package">Creating an <em>R</em> package<a class="anchor" aria-label="anchor" href="#creating-an-r-package"></a>
